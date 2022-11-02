@@ -1,2 +1,1 @@
-# python-template
-General Purpose Repository Template for Python Projects
+Implementation of various Self Supervised Learning methods in various frameworks
