@@ -25,5 +25,7 @@ repos:
     rev: v2.15.9
     hooks:
       - id: pylint
-        additional_dependencies: [-r, requirements.txt]
+        additional_dependencies:
+          - Pillow
+          - torch
         args: ["src", "-rn"]
