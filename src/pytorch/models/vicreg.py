@@ -20,6 +20,7 @@ class VICReg(nn.Module):
     def __init__(
         self,
         batch_size: int,
+        pretrained: bool = True,
         mlp: str = "8192-8192-8192",
         sim_coeff: Optional[float] = 25.0,
         std_coeff: Optional[float] = 25.0,
@@ -31,7 +32,9 @@ class VICReg(nn.Module):
         self.sim_coeff = sim_coeff
         self.std_coeff = std_coeff
         self.cov_coeff = cov_coeff
-        self.encoder = torchvision_models.resnet50(zero_init_residual=True)
+        self.encoder = torchvision_models.resnet50(
+            pretrained=pretrained, zero_init_residual=True
+        )
         # This step is important as the implementation
         # of torchvision and the one used by the authors
         # are different
