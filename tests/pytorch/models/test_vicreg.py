@@ -8,7 +8,7 @@ BATCH_SIZE = 64
 
 def test_vicreg():
     """Test VICReg model."""
-    model = VICReg(pretrained=False, batch_size=BATCH_SIZE)
+    model = VICReg(arch="resnet18", pretrained=False, batch_size=BATCH_SIZE)
     view_1 = torch.rand(BATCH_SIZE, 3, 224, 224)
     view_2 = torch.rand(BATCH_SIZE, 3, 224, 224)
     loss = model(view_1, view_2)
