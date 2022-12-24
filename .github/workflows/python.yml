@@ -36,4 +36,4 @@ jobs:
           pylint src
       - name: Test with PyTest
         run: |
-          pytest -v .
+          pytest --durations=0 --no-header -vv .
