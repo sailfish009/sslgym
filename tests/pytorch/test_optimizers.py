@@ -1,9 +1,11 @@
 """Test custom pytorch optimizers."""
+import pytest
 import torch
 
 from src.pytorch.optimizers import LARS
 
 
+@pytest.mark.pytorch
 def test_lars() -> None:
     """Test LARS."""
     params = torch.nn.Parameter(torch.rand(10, 10))

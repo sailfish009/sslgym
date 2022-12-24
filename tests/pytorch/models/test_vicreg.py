@@ -1,4 +1,5 @@
 """Test VICReg model."""
+import pytest
 import torch
 
 from src.pytorch.models.vicreg import VICReg
@@ -6,6 +7,7 @@ from src.pytorch.models.vicreg import VICReg
 BATCH_SIZE = 64
 
 
+@pytest.mark.pytorch
 def test_vicreg():
     """Test VICReg model."""
     model = VICReg(arch="resnet18", pretrained=False, batch_size=BATCH_SIZE)

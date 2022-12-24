@@ -5,6 +5,7 @@ from PIL import Image
 from src.pytorch.augmentations import GaussianBlur, Solarization
 
 
+@pytest.mark.pytorch
 @pytest.mark.parametrize("prob", [0.0, 0.5, 1.0])
 def test_gaussian_blur(prob: float) -> None:
     """Test GaussianBlur."""
@@ -14,6 +15,7 @@ def test_gaussian_blur(prob: float) -> None:
     assert output.size == image.size
 
 
+@pytest.mark.pytorch
 @pytest.mark.parametrize("prob", [0.0, 0.5, 1.0])
 def test_solarization(prob: float) -> None:
     """Test Solarization."""

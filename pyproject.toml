@@ -21,6 +21,7 @@ max-line-length = 88
 
 [[tool.mypy.overrides]]
 module = [
+    'tensorflow',
     'torchvision'
 ]
 ignore_missing_imports = true
@@ -30,4 +31,8 @@ testpaths = ["tests"]
 filterwarnings = [
     "ignore::DeprecationWarning",
 	"ignore::UserWarning"
+]
+markers =[
+    "tensorflow: mark a test as a tensorflow related.",
+    "pytorch: mark a test as a pytorch related."
 ]
