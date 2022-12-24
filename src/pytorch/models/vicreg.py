@@ -35,12 +35,12 @@ class VICReg(nn.Module):
         self.encoder = torchvision_models.resnet50(
             pretrained=pretrained, zero_init_residual=True
         )
-        # This step is important as the implementation
-        # of torchvision and the one used by the authors
-        # are different
         self.expander = expander(
             embedding=int(typing.cast(Tuple, self.encoder.fc.weight.shape)[1])
         )
+        # This step is important as the implementation
+        # of torchvision and the one used by the authors
+        # are different
         self.encoder.fc = nn.Identity()
 
     def forward(self, view_1: torch.Tensor, view_2: torch.Tensor) -> torch.Tensor:
