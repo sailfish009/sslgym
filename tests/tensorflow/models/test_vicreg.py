@@ -1,6 +1,4 @@
 """Test VICReg model."""
-from typing import Tuple
-
 import pytest
 
 import tensorflow as tf
