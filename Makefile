@@ -13,7 +13,7 @@ clean:
 
 ## Testing
 test:
-	pytest --durations=0 -vv .
+	pytest --durations=0 -v .
 
 ## Basic linting
 lint:
