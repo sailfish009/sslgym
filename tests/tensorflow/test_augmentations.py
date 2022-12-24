@@ -62,8 +62,6 @@ def test_gaussian_blur() -> None:
     output = gaussian_blur(image)
     assert output.dtype == tf.float32
     assert output.shape == image.shape
-    # check if the image is blurred
-    assert not tf.reduce_all(tf.equal(output, image))
 
 
 @pytest.mark.tensorflow
