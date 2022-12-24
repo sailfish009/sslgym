@@ -25,4 +25,6 @@ repos:
     rev: v2.15.9
     hooks:
       - id: pylint
+        entry: python -m pylint.__main__
+        language: system
         args: ["src", "-rn"]
