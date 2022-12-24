@@ -21,11 +21,12 @@ repos:
     hooks:
       - id: isort
         args: ["--profile", "black"]
-  - repo: https://github.com/pycqa/pylint
-    rev: v2.15.9
+-   repo: local
     hooks:
       - id: pylint
-        additional_dependencies:
-          - Pillow
-          - torch
-        args: ["src", "-rn"]
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
+        args:
+          ["src", "-rn"]
