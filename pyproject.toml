@@ -7,6 +7,8 @@ line-length = 88
 [tool.pylint.messages_control]
 disable = [
     "no-member",
+    "not-callable",
+    "abstract-method",
     "too-many-arguments",
     "too-few-public-methods",
     "no-else-return",
@@ -34,5 +36,7 @@ filterwarnings = [
 ]
 markers =[
     "tensorflow: mark a test as a tensorflow related.",
-    "pytorch: mark a test as a pytorch related."
+    "tensorflow_model: mark a test as a tensorflow model related.",
+    "pytorch: mark a test as a pytorch related.",
+    "pytorch_model: mark a test as a pytorch model related."
 ]

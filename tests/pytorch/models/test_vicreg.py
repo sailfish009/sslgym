@@ -8,6 +8,7 @@ BATCH_SIZE = 64
 
 
 @pytest.mark.pytorch
+@pytest.mark.pytorch_model
 def test_vicreg():
     """Test VICReg model."""
     model = VICReg(arch="resnet18", pretrained=False, batch_size=BATCH_SIZE)
