@@ -6,7 +6,7 @@ pre-commit==2.21.0
 pylint==2.15.9
 pytest==7.2.0
 pytest-github-actions-annotate-failures==0.1.8
-scipy==1.9.3
+scipy==1.10.0
 tensorflow==2.11.0
 torch==1.13.1
 torchvision==0.14.1
