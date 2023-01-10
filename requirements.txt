@@ -3,7 +3,7 @@ mypy==0.991
 numpy==1.24.1
 Pillow==9.3.0
 pre-commit==2.21.0
-pylint==2.15.9
+pylint==2.15.10
 pytest==7.2.0
 pytest-github-actions-annotate-failures==0.1.8
 scipy==1.10.0
