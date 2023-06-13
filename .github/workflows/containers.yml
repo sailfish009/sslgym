@@ -4,13 +4,13 @@ on:
   push:
     branches: [main]
     paths:
-      - '**.py'
-      - 'Containerfile'
+      - "**.py"
+      - ".devcontainer/Containerfile"
   pull_request:
     branches: [main]
     paths:
-      - '**.py'
-      - 'Containerfile'
+      - "**.py"
+      - ".devcontainer/Containerfile"
   release:
     types: [created]
 
@@ -27,13 +27,5 @@ jobs:
       - uses: docker/build-push-action@v4
         with:
           context: ./
-          file: ./Containerfile
+          file: .devcontainer/Containerfile
           push: false
-
-      - name: Buildah Action
-        uses: redhat-actions/buildah-build@v2
-        with:
-          image: python-dev
-          tags: latest ${{ github.sha }}
-          containerfiles: |
-            ./Containerfile

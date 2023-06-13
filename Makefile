@@ -1,7 +1,8 @@
 ## Install Dependencies
 requirements:
 	pip install -U pip setuptools wheel
-	pip install -r requirements.txt
+	pip install -r .devcontainer/requirements.txt
+	pre-commit install
 
 ## Delete all compiled Python files
 clean:
@@ -9,14 +10,14 @@ clean:
 	find . -type f -name "__pycache__" -delete
 	rm -rf .mypy_cache/
 	rm -rf .pytest_cache/
+	rm -rf .ruff_cache/
 
 ## Testing
 test:
-	pytest -v .
+	pytest --durations=0 -v .
 
 ## Basic linting
 lint:
 	black src
-	isort src --profile=black
+	ruff check src
 	mypy src
-	pylint src
