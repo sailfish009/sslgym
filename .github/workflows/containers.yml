@@ -29,11 +29,3 @@ jobs:
           context: ./
           file: .devcontainer/Containerfile
           push: false
-
-      - name: Buildah Action
-        uses: redhat-actions/buildah-build@v2
-        with:
-          image: python-dev
-          tags: latest ${{ github.sha }}
-          containerfiles: |
-            .devcontainer/Containerfile
