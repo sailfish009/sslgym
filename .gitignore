@@ -6,7 +6,7 @@
 .mypy_cache/
 .ruff_cache/
 
-venv/
+.venv/
 data/
 
 **/.DS_Store

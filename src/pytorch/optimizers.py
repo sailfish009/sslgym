@@ -34,7 +34,7 @@ class LARS(torch.optim.Optimizer):
         super().__init__(params, defaults)
 
     @torch.no_grad()
-    def step(self, closure=None) -> None:
+    def step(self, closure=None):
         for group in self.param_groups:
             for param in group["params"]:
                 param_grad = param.grad
